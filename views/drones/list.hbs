@@ -1,1 +1,14 @@
 <h2>Available drones</h2>
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        {{#each allDrones}}
+        <li class="list-group-item">Name: {{this.name}}<br>Propellers: {{this.propellers}}<br> Speed: {{this.maxSpeed}}
+            <br>
+            <a class="btn btn-primary" href="drones/{{this.id}}/edit">Edit drone</a>
+            <form action="/drones/{{this._id}}/delete" method="POST"><br>
+                <button class="btn btn-danger">Delete Drone</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+</div>
